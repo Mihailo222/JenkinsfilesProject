@@ -45,9 +45,26 @@ pipeline {
             steps{
                   echo "Stage: ${STAGE_NAME}"
                 
-                    dir("${env.WORKSPACE}"){
+                    dir("${env.WORKSPACE}@tmp"){
                         deleteDir()
                     }
+                    
+                   echo "Listing files after deleting ${env.WORKSPACE}@tmp"
+                 script {
+                    sh "ls -la /home/jenkins/workspace/${env.WORKSPACE}@tmp/"
+                  }
+                  
+
+                    dir("${env.WORKSPACE}"){
+                        deleteDir()
+                    }   
+
+                  echo "Listing files after deleting ${env.WORKSPACE}"
+
+
+                   script {
+                    sh "ls -la /home/jenkins/workspace/${env.WORKSPACE}/"
+                  }
 
                 
                 
