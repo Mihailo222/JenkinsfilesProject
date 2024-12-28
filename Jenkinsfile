@@ -15,5 +15,11 @@ pipeline {
                 }
             }
         }
+
+        stage('Delete Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
     }
 }
