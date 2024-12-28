@@ -32,16 +32,16 @@ pipeline {
             steps {
                 echo "Stage: ${STAGE_NAME}"
 
-                script {
+                /*script {
                     sh "ls -la \"${env.WORKSPACE}\""
+                }*/
+                script {
+                 cleanWs() //i nakon toga ti samo obrise taj ceo folder koji je WORKSPACE tog brancha
+                    }
+                echo "Listing files after cleanWs()."
+                script {
+                sh "ls -la \"${env.WORKSPACE}\""
                 }
-                //script {
-                 //cleanWs() //i nakon toga ti samo obrise taj ceo folder koji je WORKSPACE tog brancha
-                  //  }
-               // echo "Listing files after cleanWs()."
-               // script {
-               // sh "ls -la /home/jenkins/workspace"
-               // }
                 
                // dir("${env.WORKSPACE}@tmp"){
                //         deleteDir()
