@@ -64,35 +64,5 @@ pipeline {
                 
             }
         }
-    }
-
-      /*  stage('Odlazak u @tmp folder da se obrise'){
-            steps{
-                  echo "Stage: ${STAGE_NAME}"
-                
-                    dir("${env.WORKSPACE}@tmp"){
-                        deleteDir()
-                    }
-                    
-                   echo "Listing files after deleting ${env.WORKSPACE}@tmp"
-                 script {
-                    sh "ls -la /home/jenkins/workspace"
-                  }*/
-                  
-
-                 /*   dir("${env.WORKSPACE}"){
-                        deleteDir()
-                    }   
-
-                  echo "Listing files after deleting ${env.WORKSPACE}"
-
-
-                   script {
-                    sh "ls -la /home/jenkins/workspace"
-                  }*/
-
-                
-                
-            }
-        
-
+    }                
+}
