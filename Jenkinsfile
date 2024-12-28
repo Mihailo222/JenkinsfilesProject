@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'agent1' }
+    agent { label 'NodeFromRemote' }
 
     stages {
         stage('Checkout Repository') {
