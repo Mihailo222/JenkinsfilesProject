@@ -19,22 +19,21 @@ pipeline {
             }
         }
 
-        stage('Listing a workspace of a current build on a current branch'){
+        stage('Listing a workspace of a current build on a current branch') {
             steps {
                 echo "Stage: ${STAGE_NAME}"
                 script {
-                sh 'ls -la ${env.WORKSPACE}'
+                    sh 'ls -la ${env.WORKSPACE}'
                 }
             }
         }
 
         stage('Delete Workspace') { //on ovde napravi workspaces.txt fajl u koji mi kaze e, ovo su ti svi buildovi koje si izvrsio
             steps {
-                 echo "Stage: ${STAGE_NAME}"
+                echo "Stage: ${STAGE_NAME}"
 
-     //           cleanWs() //i nakon toga ti samo obrise taj ceo folder koji je WORKSPACE tog brancha
-               echo "Not deleting workspaces because of debugging reasons."
-               
+                // cleanWs() //i nakon toga ti samo obrise taj ceo folder koji je WORKSPACE tog brancha
+                echo "Not deleting workspaces because of debugging reasons."
             }
         }
     }
