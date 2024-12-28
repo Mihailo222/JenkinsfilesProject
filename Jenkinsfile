@@ -35,27 +35,36 @@ pipeline {
                 /*script {
                     sh "ls -la \"${env.WORKSPACE}\""
                 }*/
+//**********************************************************************************************
                 script {
                  cleanWs() //i nakon toga ti samo obrise taj ceo folder koji je WORKSPACE tog brancha
                     }
                 echo "Listing files after cleanWs()."
                 script {
-                sh "ls -la \"${env.WORKSPACE}\""
+                sh "ls -la \"${env.WORKSPACE}\"" //sve iz doticnog foldera je obrisano
                 }
-                
-               // dir("${env.WORKSPACE}@tmp"){
-               //         deleteDir()
-               // }
+//**********************************************************************************************                
+                dir("${env.WORKSPACE}@tmp"){
+                        deleteDir() //brise sve sto se nalazi u datom dir-u, ali ne i dir
+                }
                     
-               // echo "Listing files after deleting ${env.WORKSPACE}@tmp"
-               // script {
-                 //   sh "ls -la /home/jenkins/workspace"
-                  //}
-                
-                
+                echo "Listing files after deleting ${env.WORKSPACE}@tmp"
+                    script {
+                        sh "ls -la ${env.WORKSPACE}@tmp"
+                    }
+//**********************************************************************************************
+                dir("${env.WORKSPACE}"){
+                        deleteDir() //brise sve sto se nalazi u datom dir-u, ali ne i dir
                 }
-                }
+                    
+                echo "Listing files after deleting ${env.WORKSPACE}"
+                    script {
+                        sh "ls -la ${env.WORKSPACE}"
+                    }
+                
+            }
         }
+    }
 
       /*  stage('Odlazak u @tmp folder da se obrise'){
             steps{
