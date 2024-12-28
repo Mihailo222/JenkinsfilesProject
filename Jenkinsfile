@@ -37,5 +37,39 @@ pipeline {
                 sh "ls -la /home/jenkins/workspace"
             }
         }
+
+        stage('Odlazak u @tmp folder da se obrise'){
+            echo "Stage: ${STAGE_NAME}"
+            steps{
+                step {
+                    dir("${env.WORKSPACE}"){
+                        deleteDir()
+                    }
+
+                }
+                
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
     }
 }
