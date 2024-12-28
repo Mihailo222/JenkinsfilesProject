@@ -37,11 +37,23 @@ pipeline {
                 echo "Listing files after cleanWs()."
                 script {
                 sh "ls -la /home/jenkins/workspace"
+                
+                
+                dir("${env.WORKSPACE}@tmp"){
+                        deleteDir()
+                }
+                    
+                echo "Listing files after deleting ${env.WORKSPACE}@tmp"
+                script {
+                    sh "ls -la /home/jenkins/workspace"
+                  }
+                
+                
                 }
                 }
         }
 
-        stage('Odlazak u @tmp folder da se obrise'){
+      /*  stage('Odlazak u @tmp folder da se obrise'){
             steps{
                   echo "Stage: ${STAGE_NAME}"
                 
@@ -52,7 +64,7 @@ pipeline {
                    echo "Listing files after deleting ${env.WORKSPACE}@tmp"
                  script {
                     sh "ls -la /home/jenkins/workspace"
-                  }
+                  }*/
                   
 
                  /*   dir("${env.WORKSPACE}"){
