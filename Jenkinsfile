@@ -41,7 +41,7 @@ pipeline {
                 }
         }
 
-      /*  stage('Odlazak u @tmp folder da se obrise'){
+        stage('Odlazak u @tmp folder da se obrise'){
             echo "Stage: ${STAGE_NAME}"
             steps{
                 step {
@@ -52,7 +52,7 @@ pipeline {
                 }
                 
             }
-        }*/
+        }
 
 
 
