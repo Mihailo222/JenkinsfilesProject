@@ -37,7 +37,7 @@ pipeline {
                 echo "Listing files after cleanWs()."
                 script {
                 sh "ls -la /home/jenkins/workspace"
-                
+                }
                 
                 dir("${env.WORKSPACE}@tmp"){
                         deleteDir()
