@@ -42,8 +42,8 @@ pipeline {
         }
 
         stage('Odlazak u @tmp folder da se obrise'){
-            echo "Stage: ${STAGE_NAME}"
             steps{
+                  echo "Stage: ${STAGE_NAME}"
                 
                     dir("${env.WORKSPACE}"){
                         deleteDir()
