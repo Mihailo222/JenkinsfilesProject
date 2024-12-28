@@ -32,8 +32,9 @@ pipeline {
             steps {
                 echo "Stage: ${STAGE_NAME}"
 
-                // cleanWs() //i nakon toga ti samo obrise taj ceo folder koji je WORKSPACE tog brancha
-                echo "Not deleting workspaces because of debugging reasons."
+                 cleanWs() //i nakon toga ti samo obrise taj ceo folder koji je WORKSPACE tog brancha
+                echo "Listing files after cleanWs()."
+                sh "ls -la /home/jenkins/workspace"
             }
         }
     }
