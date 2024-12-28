@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo "Stage: ${STAGE_NAME}"
                 script {
-                    sh 'ls -la ${env.WORKSPACE}'
+                sh "ls -la \"${env.WORKSPACE}\""
                 }
             }
         }
