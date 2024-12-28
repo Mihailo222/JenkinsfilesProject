@@ -55,7 +55,7 @@ pipeline {
                   }
                   
 
-                    dir("${env.WORKSPACE}"){
+                 /*   dir("${env.WORKSPACE}"){
                         deleteDir()
                     }   
 
@@ -64,7 +64,7 @@ pipeline {
 
                    script {
                     sh "ls -la /home/jenkins/workspace"
-                  }
+                  }*/
 
                 
                 
