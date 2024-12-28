@@ -51,7 +51,7 @@ pipeline {
                     
                    echo "Listing files after deleting ${env.WORKSPACE}@tmp"
                  script {
-                    sh "ls -la ${env.WORKSPACE}@tmp/"
+                    sh "ls -la /home/jenkins/workspace"
                   }
                   
 
@@ -63,7 +63,7 @@ pipeline {
 
 
                    script {
-                    sh "ls -la ${env.WORKSPACE}/"
+                    sh "ls -la /home/jenkins/workspace"
                   }
 
                 
