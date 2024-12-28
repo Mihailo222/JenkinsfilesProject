@@ -1,7 +1,13 @@
 pipeline {
-    agent { label 'NodeFromRemote' }
+    agent { label 'agent1' }
 
     stages {
+        stage('Checkout Repository') {
+            steps {
+                checkout scm
+            }
+        }
+
         stage('Print Workspace') {
             steps {
                 script {
@@ -11,4 +17,3 @@ pipeline {
         }
     }
 }
-
